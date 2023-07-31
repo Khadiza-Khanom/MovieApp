@@ -7,18 +7,17 @@ import MoviesCard from "../components/MoviesCard.vue"
 let movieList=reactive([])
 let isLoading=ref(true)
 
-onMounted(()=>{
-    fetch("http://localhost:3000/movies")
-    .then(response=>response.json())
-    .then(apiMovies=>{
-                        movieList=apiMovies
-                        console.log(movieList)
+onMounted(async()=>{
+    try{
+        const result= await fetch("http://localhost:3000/movies")
+                        const response= await result.json()
+                        movieList=response
                         isLoading.value=false
-
-                    })
-    .catch(error=>{
+    }
+     
+    catch(error){
             console.error('fething failed',error)
-          })
+          }
       
 })
 
