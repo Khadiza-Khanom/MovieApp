@@ -28,7 +28,7 @@ onMounted(()=>{
 <template>
     <h1 v-if="isLoading">Loading...</h1>
 
-    <div v-else>
+    <div class="grid grid-cols-4 gap-4" v-else>
         <MoviesCard 
         v-for="movie,index in movieList"
         :key="index"
