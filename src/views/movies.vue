@@ -2,6 +2,7 @@
 
 import{ref,reactive, onMounted} from 'vue'
 import MoviesCard from "../components/MoviesCard.vue"
+import axios from 'axios'
 
 
 let movieList=reactive([])
@@ -9,9 +10,8 @@ let isLoading=ref(true)
 
 onMounted(async()=>{
     try{
-        const result= await fetch("http://localhost:3000/movies")
-                        const response= await result.json()
-                        movieList=response
+        const {data}= await axios.get("http://localhost:3000/movies")
+                        movieList=data
                         isLoading.value=false
     }
      
