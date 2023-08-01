@@ -27,7 +27,7 @@ onMounted(async()=>{
 <template>
     <h1 v-if="isLoading">Loading...</h1>
 
-    <div class="grid grid-cols-4 gap-4" v-else>
+    <div class="grid grid-cols-3 gap-4" v-else>
         <MoviesCard 
         v-for="movie,index in movieList"
         :key="index"

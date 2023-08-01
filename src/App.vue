@@ -1,15 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import navSection from './components/navSection.vue';
 
 </script>
 
 <template>
  
-      <nav class="flex justify-center items-center m-20">
-        <RouterLink class="m-5" to="/">Home</RouterLink>
-        <RouterLink class="m-5" to="/about">About</RouterLink>
-        <RouterLink class="m-5" to="/movies">Movies</RouterLink>
-      </nav>
+   <navSection/>
 
 
   <RouterView />
